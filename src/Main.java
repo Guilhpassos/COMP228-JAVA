@@ -1,10 +1,11 @@
 class Singers {
 
-    public String singerId;
-    public String singerName;
-    public String singerAddress;
-    public String dateOfBirth;
-    public int numAlbumsPublished;
+    // Private instance variables
+    private String singerId;
+    private String singerName;
+    private String singerAddress;
+    private String dateOfBirth;
+    private int numAlbumsPublished;
 
     // No-argument constructor
     public Singers() {
@@ -15,7 +16,7 @@ class Singers {
         this.numAlbumsPublished = 0;
     }
 
-    // Constructor 1 argument
+    // Constructor with 1 argument
     public Singers(String singerId) {
         this.singerId = singerId;
         this.singerName = "";
@@ -24,7 +25,7 @@ class Singers {
         this.numAlbumsPublished = 0;
     }
 
-    // Constructor 2 arguments
+    // Constructor with 2 arguments
     public Singers(String singerId, String singerName) {
         this.singerId = singerId;
         this.singerName = singerName;
@@ -33,7 +34,7 @@ class Singers {
         this.numAlbumsPublished = 0;
     }
 
-    // Constructor 3 arguments
+    // Constructor with 3 arguments
     public Singers(String singerId, String singerName, String singerAddress) {
         this.singerId = singerId;
         this.singerName = singerName;
@@ -42,7 +43,7 @@ class Singers {
         this.numAlbumsPublished = 0;
     }
 
-    // Constructor 4 arguments
+    // Constructor with 4 arguments
     public Singers(String singerId, String singerName, String singerAddress, String dateOfBirth) {
         this.singerId = singerId;
         this.singerName = singerName;
@@ -51,7 +52,7 @@ class Singers {
         this.numAlbumsPublished = 0;
     }
 
-    // Constructor 5 arguments
+    // Constructor with 5 arguments
     public Singers(String singerId, String singerName, String singerAddress, String dateOfBirth, int numAlbumsPublished) {
         this.singerId = singerId;
         this.singerName = singerName;
@@ -60,32 +61,83 @@ class Singers {
         this.numAlbumsPublished = numAlbumsPublished;
     }
 
+    // Getters
+    public String getSingerId() {
+        return singerId;
+    }
+
+    public String getSingerName() {
+        return singerName;
+    }
+
+    public String getSingerAddress() {
+        return singerAddress;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public int getNumAlbumsPublished() {
+        return numAlbumsPublished;
+    }
+
+    // Setters
+    public void setSingerId(String singerId) {
+        this.singerId = singerId;
+    }
+
+    public void setSingerName(String singerName) {
+        this.singerName = singerName;
+    }
+
+    public void setSingerAddress(String singerAddress) {
+        this.singerAddress = singerAddress;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setNumAlbumsPublished(int numAlbumsPublished) {
+        this.numAlbumsPublished = numAlbumsPublished;
+    }
+
+    // Setter to set all values at once
+    public void setSingerData(String singerId, String singerName, String singerAddress, String dateOfBirth, int numAlbumsPublished) {
+        this.singerId = singerId;
+        this.singerName = singerName;
+        this.singerAddress = singerAddress;
+        this.dateOfBirth = dateOfBirth;
+        this.numAlbumsPublished = numAlbumsPublished;
+    }
+
+    // Driver class to test the Singer class
     public static void main(String[] args) {
-        // Create a Singer object using no-argument constructor
+        // Creating a Singer object using no-argument constructor
         Singers singer1 = new Singers();
 
-        // Default values
-        System.out.println("");
+        // Display default values
         System.out.println("Default values:");
-        System.out.println("ID: " + singer1.singerId);
-        System.out.println("Name: " + singer1.singerName);
-        System.out.println("Address: " + singer1.singerAddress);
-        System.out.println("Date of Birth: " + singer1.dateOfBirth);
-        System.out.println("Number of Albums Published: " + singer1.numAlbumsPublished);
+        System.out.println("ID: " + singer1.getSingerId());
+        System.out.println("Name: " + singer1.getSingerName());
+        System.out.println("Address: " + singer1.getSingerAddress());
+        System.out.println("Date of Birth: " + singer1.getDateOfBirth());
+        System.out.println("Number of Albums Published: " + singer1.getNumAlbumsPublished());
 
-        // modify
-        singer1.singerId = "S001";
-        singer1.singerName = "John Doe";
-        singer1.singerAddress = "123 Music St.";
-        singer1.dateOfBirth = "1990-01-01";
-        singer1.numAlbumsPublished = 5;
+        // Setting values using setters
+        singer1.setSingerId("S543");
+        singer1.setSingerName("Michael Jackson");
+        singer1.setSingerAddress("45 Parking St.");
+        singer1.setDateOfBirth("1988-04-15");
+        singer1.setNumAlbumsPublished(5);
 
-        System.out.println("");
-        System.out.println("Updated values:");
-        System.out.println("ID: " + singer1.singerId);
-        System.out.println("Name: " + singer1.singerName);
-        System.out.println("Address: " + singer1.singerAddress);
-        System.out.println("Date of Birth: " + singer1.dateOfBirth);
-        System.out.println("Number of Albums Published: " + singer1.numAlbumsPublished);
+        // Display updated values
+        System.out.println("\nUpdated values:");
+        System.out.println("ID: " + singer1.getSingerId());
+        System.out.println("Name: " + singer1.getSingerName());
+        System.out.println("Address: " + singer1.getSingerAddress());
+        System.out.println("Date of Birth: " + singer1.getDateOfBirth());
+        System.out.println("Number of Albums Published: " + singer1.getNumAlbumsPublished());
     }
 }
